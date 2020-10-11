@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-  - host: http://a51c2cbbb4a42439f815f873ecf3f5ee-9de83b1c56da12eb.elb.ap-southeast-1.amazonaws.com/
+  - host: a51c2cbbb4a42439f815f873ecf3f5ee-9de83b1c56da12eb.elb.ap-southeast-1.amazonaws.com
     http:
       paths:
       - path: /sample-web(/|$)(.*)
