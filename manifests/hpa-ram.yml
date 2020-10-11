@@ -2,7 +2,7 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: sample-web-ram
-  namespace: sample-web
+  namespace: web-dmz
 spec:
   maxReplicas: 1
   minReplicas: 3
