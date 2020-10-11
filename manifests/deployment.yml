@@ -1,20 +1,20 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name: sample_web-deployment
+  name: sample-web-deployment
   namespace: web-dmz
 spec: 
   selector: 
     matchLabels: 
-      app: sample_web
+      app: sample-web
   replicas: 1
   template: 
     metadata: 
       labels: 
-        app: sample_web
+        app: sample-web
     spec: 
       containers: 
-      - name: sample_web
+      - name: sample-web
         image: nginx
         ports: 
         - containerPort: 80
