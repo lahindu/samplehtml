@@ -40,7 +40,8 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "200m"
-      imagePullSecret: "ecr-secret-k8s.default"
+      imagePullSecrets: 
+      - name: ecr-secret-k8s.default
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
