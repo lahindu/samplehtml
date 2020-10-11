@@ -11,7 +11,7 @@ spec:
     - ReadWriteOnce
   awsElasticBlockStore:
     fsType: "ext4"
-	volumeID: "vol-056a06d20dc0d8ef1"
+    volumeID: "vol-056a06d20dc0d8ef1"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
