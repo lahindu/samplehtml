@@ -1,0 +1,17 @@
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sample-web-ram
+  namespace: sample-web
+spec:
+  maxReplicas: 1
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sample-web-deployment
+  metrics:
+  - type: Resource
+    resource:
+      name: memory
+      targetAverageUtilization: 50
