@@ -42,4 +42,4 @@ spec:
             cpu: "200m"
         selector:
           matchLabels:
-            nodegroup: dev_eks_1_NG_private
+            nodegroup: dev_eks_1_NG_public
