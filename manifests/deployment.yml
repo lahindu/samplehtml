@@ -1,22 +1,22 @@
-apiVersion: apps/v1 
-kind: Deployment 
-metadata: 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: sample-web-deployment
   namespace: web-dmz
-spec: 
-  selector: 
-    matchLabels: 
+spec:
+  selector:
+    matchLabels:
       app: sample-web
   replicas: 1
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         app: sample-web
-    spec: 
-      containers: 
+    spec:
+      containers:
       - name: sample-web
         image: nginx
-        ports: 
+        ports:
         - containerPort: 80
         readinessProbe:
           tcpSocket:
@@ -40,6 +40,13 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "200m"
-        selector:
-          matchLabels:
-            nodegroup: dev_eks_1_NG_public
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key:  eks.amazonaws.com/nodegroup
+                operator: In
+                values:
+                - dev_eks_1_NG_private
+      dnsPolicy: ClusterFirst
