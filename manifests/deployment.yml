@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sample-web
-        image: nginx
+        image: 202256309025.dkr.ecr.ap-southeast-1.amazonaws.com/sample-ecr:IMAGETAG
         ports:
         - containerPort: 80
         readinessProbe:
