@@ -8,7 +8,7 @@ pipeline {
         }
         stage('DEPLOY') {
             steps {
-                sh 'kubectl apply -f manifests/deployment.yml '
+                sh 'kubectl apply -f manifests/'
             }
         }
         stage('ClearDir') {
